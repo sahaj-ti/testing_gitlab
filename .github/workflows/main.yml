@@ -1,0 +1,17 @@
+name: GitlabSync
+on:
+  - push
+  - fork
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Git Repo Sync
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: KaranB2010/gitlab-github-sync@main
+      with:
+        target-url: https://git.ti2.in/5950d891-d95e-4bfe-91f4-3fe4cb7f69de/testing_gitlab.git
+        target-username: sahaj-ti
+        target-token: 3iL5PVyszysfYneHx6P1
